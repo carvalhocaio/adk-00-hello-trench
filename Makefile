@@ -46,8 +46,11 @@ format: ## Formats code with ruff
 format-check: ## Verifies formatting with ruff without modifying files
 	uv run ruff format --check .
 
+# PYSEC-2026-3740: unpatched upstream NLTK sandbox bypass in model-artifact APIs, pulled transitively via eval group (rouge-score)
+PIP_AUDIT_IGNORE := --ignore-vuln PYSEC-2026-3740
+
 audit: ## Audits dependencies for known security vulnerabilities
-	uv run pip-audit
+	uv run pip-audit $(PIP_AUDIT_IGNORE)
 
 ci: lint format-check audit test ## Runs full verification pipeline locally
 
