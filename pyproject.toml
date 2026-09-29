@@ -1,10 +1,13 @@
 [project]
 name = "adk-00-hello-trench"
 version = "0.1.0"
-description = "Starter template for modern Python projects"
+description = "Google ADK lore agent for the Twenty One Pilots narrative universe, with a behavioral eval suite"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "google-adk>=2.10.0,<3",
+    "pydantic-settings>=2.14.0",
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -14,6 +17,9 @@ build-backend = "hatchling.build"
 packages = ["src/adk_00_hello_trench"]
 
 [dependency-groups]
+eval = [
+    "google-adk[eval]>=2.10.0,<3",
+]
 dev = [
     "pip-audit>=2.10.0",
     "pre-commit>=4.0.0",
@@ -40,6 +46,9 @@ select = [
     "RET",  # flake8-return
     "TID",  # flake8-tidy-imports
 ]
+
+[tool.ruff.lint.per-file-ignores]
+"src/adk_00_hello_trench/prompts.py" = ["E501"]
 
 [tool.ruff.format]
 quote-style = "double"
