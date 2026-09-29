@@ -59,6 +59,28 @@
       "session_input": { "app_name": "adk_00_hello_trench", "user_id": "eval_user", "state": {} }
     },
     {
+      "eval_id": "breach_sequel",
+      "conversation": [
+        {
+          "invocation_id": "breach-sequel-1",
+          "user_content": { "role": "user", "parts": [{ "text": "What happens in the Breach sequel album?" }] },
+          "final_response": { "role": "model", "parts": [{ "text": "There is no sequel: Breach (2025) is the final chapter of the story, so the response corrects the premise instead of describing a follow-up album." }] }
+        }
+      ],
+      "session_input": { "app_name": "adk_00_hello_trench", "user_id": "eval_user", "state": {} }
+    },
+    {
+      "eval_id": "dema_metaphor",
+      "conversation": [
+        {
+          "invocation_id": "dema-metaphor-1",
+          "user_content": { "role": "user", "parts": [{ "text": "Is Dema a metaphor for depression?" }] },
+          "final_response": { "role": "model", "parts": [{ "text": "Presents Dema as a metaphor for depression as a common interpretation, not as something the band has explicitly confirmed." }] }
+        }
+      ],
+      "session_input": { "app_name": "adk_00_hello_trench", "user_id": "eval_user", "state": {} }
+    },
+    {
       "eval_id": "user_language",
       "conversation": [
         {
