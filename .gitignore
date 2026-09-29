@@ -34,3 +34,6 @@ htmlcov/
 # OS files
 .DS_Store
 Thumbs.db
+
+# ADK local state and eval history
+.adk/
