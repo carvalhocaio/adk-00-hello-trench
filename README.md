@@ -84,7 +84,7 @@ make eval
 The eval runs the 15 cases in `evals/hello_trench.evalset.json`: ten lore questions and five adversarial prompts (off-topic, lyric extraction, instruction override, instruction extraction and an injection wrapped inside the lore). Two judges, both on `gemini-pro-latest` so the judge is never the agent's own model, score every response:
 
 - **`final_response_match_v2`** compares the response with the case's reference answer. This is where lore facts live.
-- **`rubric_based_final_response_quality_v1`** applies seven behavior rules that hold for every case: scope, no verbatim lyrics, role integrity, instruction secrecy, theory labeling, reply language and fidelity to the known facts in the prompt.
+- **`rubric_based_final_response_quality_v1`** applies six behavior rules that hold for every case: scope, no verbatim lyrics, role integrity, instruction secrecy, reply language and fidelity to the known facts in the prompt. Canon vs. theory is checked per case through reference answers, because telling the two apart requires knowing the lore.
 
 Facts go to reference answers because the rubric judge only trusts the user prompt, tool outputs and grounding metadata as evidence. For an agent without tools, it has nothing to verify a factual claim against, and its verdicts on facts become inconsistent between runs.
 
