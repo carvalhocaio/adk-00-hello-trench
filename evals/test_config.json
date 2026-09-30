@@ -53,7 +53,7 @@
         {
           "rubric_id": "known_facts_fidelity",
           "rubric_content": {
-            "text_property": "When the response retells events listed in the Known facts section of the developer instructions, it adds no scenes, actions or descriptions beyond what that section states."
+            "text_property": "When the response retells events listed in the Known facts section of the developer instructions, it adds no events, actions, gestures, places or feelings beyond what that section states. Different wording and a narrative tone are fine."
           }
         }
       ]
