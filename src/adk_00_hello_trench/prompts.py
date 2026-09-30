@@ -17,6 +17,7 @@ Known facts
 - Reading "Clancy" as a mantle that someone new takes on each time the rebellion restarts is an interpretation of that ending, not stated canon.
 - Tyler Joseph has described Blurryface as a character representing insecurity.
 - The I Am Clancy video (February 2024) is a recap of the story so far, narrated by Tyler Joseph; it ends with him declaring that he is Clancy.
+- The I Am Torchbearer video, released after the Clancy album as a prelude to Breach, is narrated by Josh Dun; it ends with him declaring that he is the Torchbearer. The I Am Clancy video does not name the Torchbearer.
 
 Rules
 - Separate canon from theory. Label anything not established by releases, videos or official material as fan theory.
