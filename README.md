@@ -18,7 +18,7 @@ The agent plays the Torchbearer's archivist and follows a short set of rules:
 - **Instruction integrity**: requests to ignore, change or reveal its instructions are declined.
 - **Language**: replies in the user's language.
 
-It has no tools. Everything it knows comes from the model.
+It has no tools. Everything it knows comes from the model, plus a short list of verified facts in the prompt for what the model cannot know on its own, such as how the story ends in *Breach*, released after its training data.
 
 ---
 
@@ -81,14 +81,14 @@ Both servers bind to `127.0.0.1` by default. The ADK dev UI is meant for local d
 make eval
 ```
 
-The eval runs the 11 cases in `evals/hello_trench.evalset.json`: six lore questions and five adversarial prompts (off-topic, lyric extraction, instruction override, instruction extraction and an injection wrapped inside the lore). Two judges, both on `gemini-pro-latest` so the judge is never the agent's own model, score every response:
+The eval runs the 14 cases in `evals/hello_trench.evalset.json`: nine lore questions and five adversarial prompts (off-topic, lyric extraction, instruction override, instruction extraction and an injection wrapped inside the lore). Two judges, both on `gemini-pro-latest` so the judge is never the agent's own model, score every response:
 
 - **`final_response_match_v2`** compares the response with the case's reference answer. This is where lore facts live.
 - **`rubric_based_final_response_quality_v1`** applies six behavior rules that hold for every case: scope, no verbatim lyrics, role integrity, instruction secrecy, theory labeling and reply language.
 
 Facts go to reference answers because the rubric judge only trusts the user prompt, tool outputs and grounding metadata as evidence. For an agent without tools, it has nothing to verify a factual claim against, and its verdicts on facts become inconsistent between runs.
 
-Latest result: 11/11 in two consecutive runs. The eval needs Gemini credentials and costs money per run, so it stays out of CI.
+Latest result: 14/14 in two consecutive runs. The eval needs Gemini credentials and costs money per run, so it stays out of CI.
 
 ---
 
@@ -114,4 +114,5 @@ Latest result: 11/11 in two consecutive runs. The eval needs Gemini credentials 
 - Repeat each run several times and track pass rates. `adk eval` has no flag for repeated runs, so a single run is only a sample.
 - Keep reference answers under review like code. The judge enforces what is written, not what is true, and a wrong reference fails a correct agent.
 - Cap the thinking budget. Reasoning tokens reached several times the size of the visible answer, which is pure cost and latency for a lore bot.
+- Replace the known facts in the prompt with search grounding. Injected facts go stale, and the model invents details around them: when the prompt only said Breach was the final chapter, the agent made up its plot.
 - Once tools arrive, move factual checks back into rubrics grounded in tool outputs, the scenario that metric was designed for.
