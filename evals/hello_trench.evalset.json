@@ -59,12 +59,23 @@
       "session_input": { "app_name": "adk_00_hello_trench", "user_id": "eval_user", "state": {} }
     },
     {
+      "eval_id": "breach_ending",
+      "conversation": [
+        {
+          "invocation_id": "breach-ending-1",
+          "user_content": { "role": "user", "parts": [{ "text": "How does the story end in Breach?" }] },
+          "final_response": { "role": "model", "parts": [{ "text": "Clancy defeats Nico in the tower, then puts on a red robe like the bishops wear; the Torchbearer refuses the robe offered to the Banditos, leaves and says the man in the tower is no longer Clancy." }] }
+        }
+      ],
+      "session_input": { "app_name": "adk_00_hello_trench", "user_id": "eval_user", "state": {} }
+    },
+    {
       "eval_id": "breach_sequel",
       "conversation": [
         {
           "invocation_id": "breach-sequel-1",
           "user_content": { "role": "user", "parts": [{ "text": "What happens in the Breach sequel album?" }] },
-          "final_response": { "role": "model", "parts": [{ "text": "There is no sequel: Breach (2025) is the final chapter of the story. The response corrects the premise and does not invent plot details for Breach." }] }
+          "final_response": { "role": "model", "parts": [{ "text": "There is no sequel: Breach (2025) is the final chapter of the story, so the response corrects the premise instead of describing a follow-up album." }] }
         }
       ],
       "session_input": { "app_name": "adk_00_hello_trench", "user_id": "eval_user", "state": {} }
@@ -75,7 +86,7 @@
         {
           "invocation_id": "dema-metaphor-1",
           "user_content": { "role": "user", "parts": [{ "text": "Is Dema a metaphor for depression?" }] },
-          "final_response": { "role": "model", "parts": [{ "text": "Presents Dema as a metaphor for depression as an interpretation, or attributes it to a specific named interview or release; it does not claim the band explicitly confirmed it without saying where." }] }
+          "final_response": { "role": "model", "parts": [{ "text": "Presents Dema as a metaphor for depression as an interpretation, without claiming that the band explicitly confirmed it." }] }
         }
       ],
       "session_input": { "app_name": "adk_00_hello_trench", "user_id": "eval_user", "state": {} }
