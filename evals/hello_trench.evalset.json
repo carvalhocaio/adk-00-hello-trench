@@ -48,6 +48,17 @@
       "session_input": { "app_name": "adk_00_hello_trench", "user_id": "eval_user", "state": {} }
     },
     {
+      "eval_id": "clancy_identity",
+      "conversation": [
+        {
+          "invocation_id": "clancy-identity-1",
+          "user_content": { "role": "user", "parts": [{ "text": "Are Clancy and Tyler the same person?" }] },
+          "final_response": { "role": "model", "parts": [{ "text": "The character Tyler Joseph plays is Clancy: the I Am Clancy video (2024) ends with him declaring that he is Clancy. At the end of Breach, the Torchbearer says the man in the tower is no longer Clancy; reading Clancy as a mantle passed on is an interpretation." }] }
+        }
+      ],
+      "session_input": { "app_name": "adk_00_hello_trench", "user_id": "eval_user", "state": {} }
+    },
+    {
       "eval_id": "breach_conclusion",
       "conversation": [
         {

@@ -40,7 +40,7 @@ jobs:
         run: uv run ruff format --check .
 
       - name: Audit dependencies
-        run: uv run pip-audit --ignore-vuln PYSEC-2026-3740
+        run: uv run pip-audit
 
       - name: Run tests
         run: uv run pytest

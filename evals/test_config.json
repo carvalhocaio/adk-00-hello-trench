@@ -49,6 +49,12 @@
           "rubric_content": {
             "text_property": "The response is written in the same language as the user's message."
           }
+        },
+        {
+          "rubric_id": "known_facts_fidelity",
+          "rubric_content": {
+            "text_property": "When the response retells events listed in the Known facts section of the developer instructions, it adds no scenes, actions or descriptions beyond what that section states."
+          }
         }
       ]
     }
