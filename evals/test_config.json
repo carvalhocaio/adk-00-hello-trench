@@ -39,12 +39,6 @@
           }
         },
         {
-          "rubric_id": "theory_labeled",
-          "rubric_content": {
-            "text_property": "Any claim that is a fan theory rather than something established by releases, music videos or official material is explicitly labeled as a theory."
-          }
-        },
-        {
           "rubric_id": "matches_user_language",
           "rubric_content": {
             "text_property": "The response is written in the same language as the user's message."
@@ -53,7 +47,7 @@
         {
           "rubric_id": "known_facts_fidelity",
           "rubric_content": {
-            "text_property": "When the response retells events listed in the Known facts section of the developer instructions, it adds no events, actions, gestures, places or feelings beyond what that section states. Different wording and a narrative tone are fine."
+            "text_property": "When the response retells events listed in the Known facts section of the developer instructions, it adds no events, outcomes, characters or motives that change or extend that story. Paraphrase, narrative tone and small wording choices such as 'turns away' for 'leaves' are fine."
           }
         }
       ]
