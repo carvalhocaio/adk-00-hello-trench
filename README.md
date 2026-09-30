@@ -50,13 +50,13 @@ make sync
 cp .env.example .env
 ```
 
-| Variable | Description | Default |
-|---|---|---|
-| `GOOGLE_API_KEY` | Gemini API key, required when not using Vertex AI | — |
-| `GOOGLE_GENAI_USE_ENTERPRISE` | `1` to use Vertex AI instead of the Gemini API | `0` |
-| `GOOGLE_CLOUD_PROJECT` | Google Cloud project, required when `GOOGLE_GENAI_USE_ENTERPRISE=1` | — |
-| `GOOGLE_CLOUD_LOCATION` | Vertex AI region | `us-central1` |
-| `HELLO_TRENCH_MODEL` | Gemini model used by the agent | `gemini-flash-latest` |
+| Variable                      | Description                                                         | Default               |
+|-------------------------------|---------------------------------------------------------------------|-----------------------|
+| `GOOGLE_API_KEY`              | Gemini API key, required when not using Vertex AI                   | —                     |
+| `GOOGLE_GENAI_USE_ENTERPRISE` | `1` to use Vertex AI instead of the Gemini API                      | `0`                   |
+| `GOOGLE_CLOUD_PROJECT`        | Google Cloud project, required when `GOOGLE_GENAI_USE_ENTERPRISE=1` | —                     |
+| `GOOGLE_CLOUD_LOCATION`       | Vertex AI region                                                    | `us-central1`         |
+| `HELLO_TRENCH_MODEL`          | Gemini model used by the agent                                      | `gemini-flash-latest` |
 
 Missing credentials fail at import time with a clear message instead of on the first model call.
 
@@ -64,12 +64,12 @@ Missing credentials fail at import time with a clear message instead of on the f
 
 ## Usage
 
-| Command | Description |
-|---|---|
-| `make run` | Chat with the agent in the terminal |
-| `make web` | Start the ADK dev UI at `http://127.0.0.1:8000` |
-| `make api` | Start the ADK API server on localhost |
-| `make eval` | Run the eval suite against Gemini |
+| Command     | Description                                     |
+|-------------|-------------------------------------------------|
+| `make run`  | Chat with the agent in the terminal             |
+| `make web`  | Start the ADK dev UI at `http://127.0.0.1:8000` |
+| `make api`  | Start the ADK API server on localhost           |
+| `make eval` | Run the eval suite against Gemini               |
 
 Both servers bind to `127.0.0.1` by default. The ADK dev UI is meant for local development only.
 
@@ -81,25 +81,25 @@ Both servers bind to `127.0.0.1` by default. The ADK dev UI is meant for local d
 make eval
 ```
 
-The eval runs the 14 cases in `evals/hello_trench.evalset.json`: nine lore questions and five adversarial prompts (off-topic, lyric extraction, instruction override, instruction extraction and an injection wrapped inside the lore). Two judges, both on `gemini-pro-latest` so the judge is never the agent's own model, score every response:
+The eval runs the 15 cases in `evals/hello_trench.evalset.json`: ten lore questions and five adversarial prompts (off-topic, lyric extraction, instruction override, instruction extraction and an injection wrapped inside the lore). Two judges, both on `gemini-pro-latest` so the judge is never the agent's own model, score every response:
 
 - **`final_response_match_v2`** compares the response with the case's reference answer. This is where lore facts live.
-- **`rubric_based_final_response_quality_v1`** applies six behavior rules that hold for every case: scope, no verbatim lyrics, role integrity, instruction secrecy, theory labeling and reply language.
+- **`rubric_based_final_response_quality_v1`** applies seven behavior rules that hold for every case: scope, no verbatim lyrics, role integrity, instruction secrecy, theory labeling, reply language and fidelity to the known facts in the prompt.
 
 Facts go to reference answers because the rubric judge only trusts the user prompt, tool outputs and grounding metadata as evidence. For an agent without tools, it has nothing to verify a factual claim against, and its verdicts on facts become inconsistent between runs.
 
-Latest result: 14/14 in two consecutive runs. The eval needs Gemini credentials and costs money per run, so it stays out of CI.
+Latest result: 15/15 in two consecutive runs. The eval needs Gemini credentials and costs money per run, so it stays out of CI.
 
 ---
 
 ## Development
 
-| Command | Description |
-|---|---|
-| `make ci` | Lint, format check, dependency audit and tests, same as GitHub Actions |
-| `make test` | Unit tests |
-| `make lint` / `make format` | Ruff |
-| `make hooks` | Install the pre-commit hooks |
+| Command                     | Description                                                            |
+|-----------------------------|------------------------------------------------------------------------|
+| `make ci`                   | Lint, format check, dependency audit and tests, same as GitHub Actions |
+| `make test`                 | Unit tests                                                             |
+| `make lint` / `make format` | Ruff                                                                   |
+| `make hooks`                | Install the pre-commit hooks                                           |
 
 ---
 
